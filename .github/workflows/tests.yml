@@ -36,4 +36,3 @@ jobs:
         run: |
           py_ver=$(echo ${{ matrix.python-version }} | tr -d '.')
           tox -e py${py_ver}-django42,py${py_ver}-django50,py${py_ver}-django51
-
