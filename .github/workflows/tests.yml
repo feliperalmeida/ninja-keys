@@ -32,5 +32,7 @@ jobs:
 
       - name: Run tox (Python 3.10+)
         if: matrix.python-version != '3.9'
+        shell: bash
         run: |
-          tox -e py$(echo ${{ matrix.python-version }} | tr -d '.')-django{42,50,51}
+          py_ver=$(echo ${{ matrix.python-version }} | tr -d '.')
+          tox -e py${py_ver}-django42,py${py_ver}-django50,py${py_ver}-django51
