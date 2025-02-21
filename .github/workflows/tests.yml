@@ -1,0 +1,38 @@
+name: Tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.9", "3.10", "3.11", "3.12", "3.13" ]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }} and uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          uv pip install tox tox-uv
+
+      - name: Run tox (Python 3.9)
+        if: matrix.python-version == '3.9'
+        run: |
+          tox -e py39-django42
+
+      - name: Run tox (Python 3.10+)
+        if: matrix.python-version != '3.9'
+        shell: bash
+        run: |
+          py_ver=$(echo ${{ matrix.python-version }} | tr -d '.')
+          tox -e py${py_ver}-django42,py${py_ver}-django50,py${py_ver}-django51

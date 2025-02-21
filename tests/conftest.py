@@ -5,6 +5,7 @@ def pytest_configure() -> None:
     settings.configure(
         **{
             "SECRET_KEY": "abcd",
+            "USE_TZ": True,
             "INSTALLED_APPS": [
                 # Mandatory
                 "django.contrib.contenttypes",
