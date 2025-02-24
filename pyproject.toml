@@ -1,9 +1,10 @@
 [project]
 name = "ninja-keys"
-version = "1.0.0"
+version = "1.0.1"
 description = "API Keys for Django Ninja"
-readme = "README.md"
+readme = { "file" = "README.md", "content-type" = "text/markdown" }
 license = { text = "MIT" }
+keywords = ["django", "ninja", "django-ninja", "api", "authorization", "authentication", "security"]
 authors = [
     { name = "Felipe R. de Almeida", email = "felipe@security.dev" }
 ]
@@ -24,6 +25,10 @@ classifiers = ["Development Status :: 4 - Beta",
     "Framework :: Django :: 5.0",
     "Framework :: Django :: 5.1", ]
 dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/feliperalmeida/ninja-keys"
+"Documentation" = "https://github.com/feliperalmeida/ninja-keys"
 
 [build-system]
 requires = ["hatchling"]
