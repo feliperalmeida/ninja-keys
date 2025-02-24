@@ -3,6 +3,7 @@
 [![PyPI version](https://badge.fury.io/py/ninja-keys.svg)](https://badge.fury.io/py/ninja-keys)
 [![PyPI Supported Python Versions](https://img.shields.io/pypi/pyversions/ninja-keys.svg)](https://pypi.python.org/pypi/ninja-keys/)
 [![tests](https://github.com/feliperalmeida/ninja-keys/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/feliperalmeida/ninja-keys/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/github/feliperalmeida/ninja-keys/graph/badge.svg?token=F8O6BPUYPH)](https://codecov.io/github/feliperalmeida/ninja-keys)
 
 API Keys for Django Ninja. 🔐
 
